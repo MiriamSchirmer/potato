@@ -253,7 +253,7 @@
 
     <div id="mySidepanel" class="sidepanel">
       <a href="javascript:void(0)" class="closebtn" target_id="mySidepanel" onclick="closeNav(this.getAttribute('target_id'))">&times;</a>
-      <table><tr><th>Key</th><th>Description</th></tr><tr><td style="text-align: center;">&#8592;</td><td>Move backward</td></tr><tr><td style="text-align: center;">&#8594;</td><td>Move forward</td></tr><tr><td style="text-align: center;">1</td><td>certainty: certain</td></tr><tr><td style="text-align: center;">2</td><td>certainty: uncertain</td></tr><tr><td style="text-align: center;">1</td><td>sentiment: positive</td></tr><tr><td style="text-align: center;">2</td><td>sentiment: neutral</td></tr><tr><td style="text-align: center;">3</td><td>sentiment: negative</td></tr></table>
+      <table><tr><th>Key</th><th>Description</th></tr><tr><td style="text-align: center;">&#8592;</td><td>Move backward</td></tr><tr><td style="text-align: center;">&#8594;</td><td>Move forward</td></tr><tr><td style="text-align: center;">1</td><td>select_trauma: yes</td></tr><tr><td style="text-align: center;">2</td><td>select_trauma: no</td></tr><tr><td style="text-align: center;">3</td><td>select_trauma: uncertain</td></tr></table>
     </div>
 
     <div id="Statpanel" class="sidepanel">
@@ -740,12 +740,12 @@
    
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
       <div class="container-fluid">
-        <a href="#" class="navbar-brand mr-3">Dialogue Analysis</a>
+        <a href="#" class="navbar-brand mr-3">Doctor Patient Conversation Analysis</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav">
+          <div class="navbar-nav" hidden>
             <a href="#" class="nav-item nav-link active">Home</a>
             
             <a role="button" href="#" class="nav-item nav-link openbtn" target_id="Statpanel" width = "475px" onclick="openNav(this.getAttribute('target_id'),this.getAttribute('width'))">Statistics</a>
@@ -798,10 +798,7 @@
   </div>
   <div class="col-md-12">
     <div class="annotation_schema">
-      <form action="/action_page.php">  <fieldset>  <legend>Highlight which phrases make the sentence more or less certain</legend>      <input class="certainty" for_span="True" type="checkbox" id="certainty:::certain" name="span_label:::certainty:::certain"  value="1" xchecked="checked" onclick="onlyOne(this); changeSpanLabel(this, 'certain', '(230, 25, 75)');" validation="">  <label for="certainty:::certain" ><span style="background-color:rgb(230, 25, 75,0.25);">certain</span></label><br/>      <input class="certainty" for_span="True" type="checkbox" id="certainty:::uncertain" name="span_label:::certainty:::uncertain"  value="2"  onclick="onlyOne(this); changeSpanLabel(this, 'uncertain', '(60, 180, 75)');" validation="">  <label for="certainty:::uncertain" ><span style="background-color:rgb(60, 180, 75,0.25);">uncertain</span></label><br/>  </fieldset>
-</form>
-
-<form action="/action_page.php">  <fieldset>  <legend>What kind of sentiment does the given text hold?</legend>      <input class="sentiment" type="radio" id="sentiment:::positive" name="sentiment:::positive" value="1" onclick="onlyOne(this)" validation="">  <label for="sentiment:::positive" >positive</label><br/>      <input class="sentiment" type="radio" id="sentiment:::neutral" name="sentiment:::neutral" value="2" onclick="onlyOne(this)" validation="">  <label for="sentiment:::neutral" >neutral</label><br/>      <input class="sentiment" type="radio" id="sentiment:::negative" name="sentiment:::negative" value="3" onclick="onlyOne(this)" validation="">  <label for="sentiment:::negative" >negative</label><br/>  </fieldset>
+      <form action="/action_page.php">  <fieldset>  <legend>Traumatic events are defined as XY. Does this text contain suchh an event?</legend>      <input class="select_trauma" type="radio" id="select_trauma:::yes" name="select_trauma:::yes" value="1" onclick="onlyOne(this)" validation="">  <label for="select_trauma:::yes" >yes</label><br/>      <input class="select_trauma" type="radio" id="select_trauma:::no" name="select_trauma:::no" value="2" onclick="onlyOne(this)" validation="">  <label for="select_trauma:::no" >no</label><br/>      <input class="select_trauma" type="radio" id="select_trauma:::uncertain" name="select_trauma:::uncertain" value="3" onclick="onlyOne(this)" validation="">  <label for="select_trauma:::uncertain" >uncertain</label><br/>  </fieldset>
 </form>
 
 
