@@ -1,12 +1,13 @@
 {
-    "port": 8000,
+    "port": 8880,
 
     "server_name": "potato annotator",
 
     "annotation_task_name": "Traumatic Event Detection",
     
-    "prolific": {
-    "config_file_path": 'configs/prolific_config.yaml'},
+    # "prolific": {
+    # "config_file_path": 'configs/prolific_config.yaml'
+    # },
 
 
     # Potato will write the annotation file for all annotations to this
@@ -45,9 +46,6 @@
        {'file':'surveyflow/end_fin.jsonl','text':'End of survey'}
       
       ],
-       
-      # If set, we will automatically generate testing questions similar to the annotation instances, but explicitly ask the annotator to choose one option
-      #"testing": [],
     },
 
 
@@ -58,20 +56,21 @@
 
     "item_properties": {
         "id_key": "id",
-        #"context_key": "date",
-        "text_key": "text"
+        "text_key": "text",
+        # "context_key": "context"
     },
+
 
    
     "automatic_assignment": {
       #whether do automatic task assignment for annotators, default False.
       "on": True,
-      "output_filename": 'task_assignment.json',
+      "output_filename": 'task_assignment_2.json',
       "sampling_strategy": 'random',
 
       "labels_per_instance": 3,
       # "instance_per_annotator": 1,
-      "instance_per_annotator": 10,
+      "instance_per_annotator": 5,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -112,33 +111,13 @@
             "annotation_type": "radio",
             #"arrangement": "vertical",
             "name": "select_trauma",
-            "description": "Traumatic events are defined as XY. Does this text contain suchh an event?",
+            "description": "Does this text contain a traumatic event? 
+            Traumatic events are defined as \"exposure to actual or threatened death, serious injury, or sexual violence,\" whether directly encountered or witnessed. It also counts as a traumatic event if something like that has happened to a close family member or friend.",
             "labels": ["yes", "no", "uncertain"],
             # If true, numbers [1-len(labels)] will be bound to each label. Aannotations with more than 10 are not supported with this simple keybinding and will need to use the full item specification to bind all labels to keys.
             "sequential_key_binding": True,                        
         },       
     ],
-              
- 
-
-    # The html that changes the visualiztation for your task. Change this file
-    # to influence the layout and description of your task. This is not a full
-    # HTML page, just the piece that does lays out your task's pieces
-    # you may use templates in our lib, if you want to use your own template,
-    # please replace the string as a path to the template
-   
-    # "html_layout": "../templates/Doctor-Patient-Conversation-Analysis- copy.html",
-
-    "html_layout": "templates/layout.html",
-    "surveyflow_html_layout": "default",
-
-    # The core UI files for Potato. You should not need to change these normally.
-    #
-    # Exceptions to this might include: 
-    # 1) You want to add custom CSS/fonts to style your task
-    # 2) Your layout requires additional JS/assets to render
-    # 3) You want to support additional keybinding magic
-    #
     # if you want to use your own template,
     # please replace the string as a path to the template
     # "base_html_template": "../../potato/templates/Doctor-Patient-Conversation-Analysis-base_template.html",
