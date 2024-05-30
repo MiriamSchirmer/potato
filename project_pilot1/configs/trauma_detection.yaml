@@ -55,7 +55,7 @@
     ],
 
     "item_properties": {
-        "id_key": "ID",
+        "id_key": "id",
         "text_key": "text",
         # "context_key": "context"
     },
@@ -70,7 +70,7 @@
 
       "labels_per_instance": 3,
       # "instance_per_annotator": 1,
-      "instance_per_annotator": 5,
+      "instance_per_annotator": 30,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -112,7 +112,7 @@
             #"arrangement": "vertical",
             "name": "select_trauma",
             "description": "Does this text contain a traumatic event? 
-            Traumatic events are defined as \"exposure to actual or threatened death, serious injury, or sexual violence,\" whether directly encountered or witnessed. It also counts as a traumatic event if something like that has happened to a close family member or friend.",
+            Traumatic events are defined as \"exposure to actual or threatened death, serious injury, sexual violence, or severe mental abuse,\" whether directly encountered or witnessed. It also counts as a traumatic event if something like that has happened to a close family member or friend.",
             "labels": ["yes", "no", "uncertain"],
             # If true, numbers [1-len(labels)] will be bound to each label. Aannotations with more than 10 are not supported with this simple keybinding and will need to use the full item specification to bind all labels to keys.
             "sequential_key_binding": True,                        
