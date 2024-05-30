@@ -51,11 +51,11 @@
 
     "data_files": [
     
-       "data/ptsd_test.json"
+       "data/pilot_data.json"
     ],
 
     "item_properties": {
-        "id_key": "id",
+        "id_key": "ID",
         "text_key": "text",
         # "context_key": "context"
     },
