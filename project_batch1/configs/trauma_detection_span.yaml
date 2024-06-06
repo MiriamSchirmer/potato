@@ -51,7 +51,7 @@
 
     "data_files": [
     
-       "data/pilot_data.json"
+       "data/data_batch1.json"
     ],
 
     "item_properties": {
