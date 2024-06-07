@@ -1,6 +1,6 @@
 {
     "token": 'oIW2kTqfttf8ImZNxiwixVI37IJ7wcb4LlaYolHkI12FFOz2_aArHbotm2BeMVThtw4k20IJlmVDx0znQzdzVy3XysNhDiRy7AAwrTtFVzVLXtRPeutk2OZ-',
     "study_id": '6662037d6cf0a24e5c030992',
-    "max_concurrent_sessions": 30,
+    "max_concurrent_sessions": 40,
     "workload_checker_period": 300
 }
